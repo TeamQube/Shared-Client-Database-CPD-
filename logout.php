@@ -1,0 +1,21 @@
+<?php
+session_start();
+if(isset($_SESSION["stdname"]))
+{
+session_destroy();
+header("location:student-login.php");
+}
+elseif(isset($_SESSION["facultyname"]))
+{
+session_destroy();
+header("location:faculty-login.php");
+}
+elseif(isset($_SESSION["emp"]))
+{
+session_destroy();
+header("location:employee-login.php");
+}
+else{
+	session_destroy();
+}
+?>
